@@ -179,4 +179,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentPage === '/' || currentPage.includes('index.html')) {
         document.querySelector('a[href="index.html"]').classList.add('active');
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        // Animate hamburger
+        const spans = this.querySelectorAll('span');
+        spans.forEach(span => span.classList.toggle('active'));
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav-container')) {
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Update copyright year
+    const yearSpan = document.querySelector('[data-current-year]');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 }); 

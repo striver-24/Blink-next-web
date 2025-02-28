@@ -1424,4 +1424,155 @@ body {
 
 .explore-button:hover .button-icon {
     transform: translateX(5px);
+}
+
+/* Base responsive settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive typography */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Responsive navigation */
+.nav-container {
+    padding: 1rem;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+}
+
+/* Responsive grid layouts */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Contact form responsiveness */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Logo strip responsiveness */
+.logo-strip img {
+    height: 40px;
+    object-fit: contain;
+}
+
+@media (max-width: 576px) {
+    .logo-strip img {
+        height: 30px;
+    }
+}
+
+/* Hero section responsiveness */
+.hero-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        padding: 1rem;
+    }
+}
+
+/* Footer responsiveness */
+.footer-logo {
+    padding: 2rem 1rem;
+}
+
+.footer-bottom {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Form responsiveness */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+}
+
+/* Map responsiveness */
+.footer-map-section {
+    height: 300px;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .footer-map-section {
+        height: 200px;
+    }
 } 
