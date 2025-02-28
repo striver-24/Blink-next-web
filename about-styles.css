@@ -1,0 +1,296 @@
+/* About Page Styles */
+.about-hero {
+    height: 60vh;
+    background: linear-gradient(135deg, var(--primary-black), #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.about-hero-content {
+    max-width: 800px;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, var(--barbie-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-hero h2 {
+    font-size: 1.8rem;
+    color: var(--barbie-pink);
+    margin-bottom: 1.5rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+}
+
+.about-content {
+    padding: 5rem 2rem;
+    background: var(--primary-black);
+}
+
+.about-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 105, 180, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--barbie-pink);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+}
+
+.about-icon {
+    font-size: 2.5rem;
+    color: var(--barbie-pink);
+    margin-bottom: 1.5rem;
+}
+
+.about-card h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .about-hero h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Add these team section styles */
+.team-section {
+    padding: 6rem 2rem;
+    background: var(--primary-black);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 4rem;
+    background: linear-gradient(45deg, #fff, var(--barbie-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.team-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+.card-stack {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    transform-style: preserve-3d;
+}
+
+.team-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 105, 180, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.position {
+    color: var(--barbie-pink);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.card-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--barbie-pink);
+}
+
+/* Card Stack Effects */
+.team-stack .team-card:nth-child(1) {
+    transform: translateY(-20px) rotate(-5deg);
+}
+
+.team-stack .team-card:nth-child(2) {
+    transform: translateY(-10px) rotate(3deg);
+}
+
+.team-stack .team-card:nth-child(3) {
+    transform: translateY(0) rotate(-2deg);
+}
+
+.card-stack:hover .team-card:nth-child(1) {
+    transform: translateY(-40px) rotate(-8deg);
+}
+
+.card-stack:hover .team-card:nth-child(2) {
+    transform: translateY(-20px) rotate(5deg);
+}
+
+.card-stack:hover .team-card:nth-child(3) {
+    transform: translateY(0) rotate(-4deg);
+}
+
+/* Founder and Co-founder card effects */
+.founder-stack .team-card,
+.cofounder-stack .team-card {
+    transform: translateY(0) rotate(0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.founder-stack:hover .team-card {
+    transform: translateY(-20px) rotate(-5deg);
+}
+
+.cofounder-stack:hover .team-card {
+    transform: translateY(-20px) rotate(5deg);
+}
+
+/* Updated responsive design */
+@media (max-width: 1200px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .card-stack {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-section {
+        padding: 4rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Enhanced hover effect for all cards */
+.card-stack:hover .team-card {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+    border-color: var(--barbie-pink);
+}
+
+.team-card {
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card image hover effect */
+.team-card:hover .card-image img {
+    transform: scale(1.1);
+} 
