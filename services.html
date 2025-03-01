@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - BlinkNext</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Services - BlinkNext</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="services-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">
@@ -19,19 +19,34 @@
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
-                <a href="services.html" class="nav-link">Services</a>
+                <a href="services.html" class="nav-link active">Services</a>
                 <a href="#contact" class="nav-link get-started">Get Started</a>
             </div>
         </div>
     </nav>
 
-    <!-- Services Hero Section -->
-    <section class="services-hero">
-        <div class="services-hero-content">
-            <h1>Our Services</h1>
-            <h2>Comprehensive Digital Solutions for Your Business Growth</h2>
+    <!-- Hero Section -->
+    <section class="hero services-hero">
+        <canvas id="starsCanvas"></canvas>
+        
+        <div class="wave-container">
+            <!-- Same wave effects as other pages -->
+            <div class="wave-wrapper">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+                <div class="wave wave4"></div>
+            </div>
+            <div class="wave-detail wave-detail1"></div>
+            <div class="wave-detail wave-detail2"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-small">Our Services</span>
+            <h1 class="hero-large gradient-text">Digital Excellence</h1>
             <div class="hero-description">
-                <p>At BlinkNext, we provide tailored digital marketing solutions designed to maximize your reach, boost engagement, and drive conversions. Whether you're a startup or an established brand, we have the expertise to take your online presence to the next level.</p>
+                <p class="lead-text">Comprehensive Digital Solutions</p>
+                <p class="sub-text">Discover how we can help your business grow</p>
             </div>
         </div>
     </section>
@@ -287,6 +302,7 @@
         </div>
     </footer>
 
+    <script src="stars.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

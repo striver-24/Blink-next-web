@@ -187,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     hamburger.addEventListener('click', function() {
         navLinks.classList.toggle('active');
-        // Animate hamburger
         const spans = this.querySelectorAll('span');
         spans.forEach(span => span.classList.toggle('active'));
     });
@@ -203,5 +202,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const yearSpan = document.querySelector('[data-current-year]');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Add page transition effect
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (link.getAttribute('href').startsWith('#')) return;
+            
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            
+            document.body.style.opacity = 0;
+            
+            setTimeout(() => {
+                window.location.href = href;
+            }, 300);
+        });
+    });
+
+    // Fade in page on load
+    document.body.style.opacity = 0;
+    setTimeout(() => {
+        document.body.style.opacity = 1;
+    }, 100);
+
+    // Add active state to current page in navigation
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const activeLink = document.querySelector(`.nav-link[href="${currentPage}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
     }
 }); 

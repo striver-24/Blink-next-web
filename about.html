@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>About Us - BlinkNext</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navigation (same as index.html but with about.html active) -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">
@@ -18,19 +18,36 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About Us</a>
+                <a href="about.html" class="nav-link active">About Us</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="#contact" class="nav-link get-started">Get Started</a>
             </div>
         </div>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="about-hero">
-        <div class="about-hero-content">
-            <h1>About Us</h1>
-            <h2>Innovating Digital Solutions for Tomorrow</h2>
-            <p>At BlinkNext, we're passionate about transforming businesses through innovative digital solutions. Our team of experts combines creativity with technical expertise to deliver exceptional results.</p>
+    <!-- Hero Section -->
+    <section class="hero about-hero">
+        <canvas id="starsCanvas"></canvas>
+        
+        <div class="wave-container">
+            <!-- Same wave effects as other pages -->
+            <div class="wave-wrapper">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+                <div class="wave wave4"></div>
+            </div>
+            <div class="wave-detail wave-detail1"></div>
+            <div class="wave-detail wave-detail2"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="hero-small">About Us</span>
+            <h1 class="hero-large gradient-text">Our Story & Vision</h1>
+            <div class="hero-description">
+                <p class="lead-text">Transforming Digital Landscapes</p>
+                <p class="sub-text">Learn about our journey and what drives us forward</p>
+            </div>
         </div>
     </section>
 
@@ -209,6 +226,7 @@
         </div>
     </footer>
 
+    <script src="stars.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

@@ -18,6 +18,7 @@ body {
     line-height: 1.6;
     color: var(--white);
     background-color: var(--primary-black);
+    transition: opacity 0.3s ease;
 }
 
 /* Import Google Fonts */
@@ -1708,4 +1709,35 @@ img {
 
 .careers-hero .wave-container {
     z-index: 1;
+}
+
+/* Page Transitions */
+body {
+    transition: opacity 0.3s ease;
+}
+
+/* Hero Sections for different pages */
+.about-hero,
+.services-hero,
+.contact-hero,
+.careers-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero .hero-content,
+.services-hero .hero-content,
+.contact-hero .hero-content,
+.careers-hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Active Navigation Link */
+.nav-link.active {
+    color: var(--barbie-pink);
+}
+
+.nav-link.active::after {
+    width: 100%;
 } 
