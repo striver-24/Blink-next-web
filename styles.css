@@ -1577,120 +1577,78 @@ img {
     }
 }
 
-/* Careers Page Styles */
+/* Update Careers Page Styles */
 .careers-hero {
-    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-    color: white;
-    padding: 6rem 2rem;
-    text-align: center;
-}
-
-.careers-hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.careers-hero-content p {
-    font-size: 1.5rem;
-    opacity: 0.9;
+    background: var(--primary-black);
 }
 
 .openings-section {
+    background: var(--primary-black);
     padding: 4rem 2rem;
 }
 
-.openings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.job-card {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.job-card:hover {
-    transform: translateY(-5px);
-}
-
-.job-card h3 {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.job-card p {
-    margin: 0.5rem 0;
-    color: #666;
-}
-
-.job-card i {
-    margin-right: 0.5rem;
-    color: #6366f1;
-}
-
-.apply-btn {
-    background: #6366f1;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.apply-btn:hover {
-    background: #4f46e5;
+.openings-section h2,
+.why-join-us h2 {
+    color: var(--barbie-pink);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .why-join-us {
-    background: #f8f9fa;
-    padding: 4rem 2rem;
+    background: var(--primary-black);
 }
 
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+.service-card i {
+    color: var(--barbie-pink);
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
+.service-card h3 {
+    color: var(--barbie-pink);
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+/* Remove previous careers styles that don't match the theme */
+.careers-hero {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+.job-card,
 .benefit-card {
-    text-align: center;
-    padding: 2rem;
+    background: transparent;
 }
 
-.benefit-card i {
-    font-size: 2.5rem;
-    color: #6366f1;
-    margin-bottom: 1rem;
+.apply-btn {
+    background: var(--barbie-pink);
+    color: var(--white);
+    border: 2px solid var(--barbie-pink);
+    transition: all 0.3s ease;
 }
 
-.benefit-card h3 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.benefit-card p {
-    color: #666;
+.apply-btn:hover {
+    background: transparent;
+    color: var(--barbie-pink);
 }
 
 @media (max-width: 768px) {
-    .careers-hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .careers-hero-content p {
-        font-size: 1.2rem;
-    }
-    
     .openings-section,
     .why-join-us {
         padding: 2rem 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-card i {
+        font-size: 1.75rem;
     }
 } 
