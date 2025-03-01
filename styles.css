@@ -700,8 +700,9 @@ body {
 
 /* Testimonials */
 .testimonials {
-    padding: 5rem 2rem;
-    background: var(--primary-black);
+    position: relative;
+    padding: 4rem 2rem;
+    background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(20,20,20,0.95));
 }
 
 .section-title {
@@ -718,23 +719,25 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    perspective: 1000px;
+    padding: 2rem;
 }
 
 .testimonial-card {
-    height: 300px;
+    perspective: 1000px;
+    height: 400px;
+    margin: 1rem;
     position: relative;
-    cursor: pointer;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
     transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
 
 .testimonial-card:hover .card-inner {
@@ -747,29 +750,19 @@ body {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 15px;
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px solid var(--barbie-pink);
     padding: 2rem;
-    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-/* Notebook lines effect */
-.notebook-lines {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom,
-        transparent 0%,
-        transparent calc(1.5rem - 1px),
-        rgba(255, 105, 180, 0.2) calc(1.5rem - 1px),
-        rgba(255, 105, 180, 0.2) 1.5rem,
-        transparent 1.5rem
-    );
-    background-size: 100% 1.5rem;
-    z-index: 1;
-    opacity: 0.3;
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .card-back {
@@ -777,99 +770,138 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(145deg, rgba(0, 0, 0, 0.95), rgba(255, 105, 180, 0.1));
+    text-align: center;
+    background: rgba(255, 105, 180, 0.1);
 }
 
 .testimonial-content {
     position: relative;
-    z-index: 2;
-    text-align: center;
+    z-index: 1;
 }
 
 .client-image {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     border: 3px solid var(--barbie-pink);
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
 }
 
-.testimonial-content h3 {
-    color: var(--white);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
-}
-
-.company {
+.testimonial-card h3 {
     color: var(--barbie-pink);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.testimonial-card .company {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .card-back p {
-    color: var(--white);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem;
+    color: white;
+    font-size: 1.1rem;
     line-height: 1.6;
     position: relative;
-    z-index: 2;
-    padding: 0 1rem;
-    text-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
 }
 
-/* Card hover effects */
-.testimonial-card:hover .card-front,
-.testimonial-card:hover .card-back {
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+.card-back p::before,
+.card-back p::after {
+    content: '"';
+    color: var(--barbie-pink);
+    font-size: 4rem;
+    position: absolute;
+    opacity: 0.3;
 }
 
-/* Paper texture effect */
-.card-front, .card-back {
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
-    background-image: 
-        linear-gradient(45deg, 
-            rgba(255, 105, 180, 0.05) 25%, 
-            transparent 25%, 
-            transparent 75%, 
-            rgba(255, 105, 180, 0.05) 75%, 
-            rgba(255, 105, 180, 0.05)),
-        linear-gradient(45deg, 
-            rgba(255, 105, 180, 0.05) 25%, 
-            transparent 25%, 
-            transparent 75%, 
-            rgba(255, 105, 180, 0.05) 75%, 
-            rgba(255, 105, 180, 0.05));
-    background-size: 4px 4px;
-    background-position: 0 0, 2px 2px;
+.card-back p::before {
+    top: -20px;
+    left: -10px;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+.card-back p::after {
+    bottom: -40px;
+    right: -10px;
+}
+
+.notebook-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 29px,
+        rgba(255, 255, 255, 0.1) 29px,
+        rgba(255, 255, 255, 0.1) 30px
+    );
+    pointer-events: none;
+}
+
+/* Glowing effect on hover */
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(45deg, 
+        rgba(255, 105, 180, 0.1),
+        rgba(255, 105, 180, 0.2)
+    );
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.testimonial-card:hover::after {
+    opacity: 1;
+}
+
+/* Animation for cards */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.testimonial-card {
+    animation: cardAppear 0.5s ease forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
     .testimonial-card {
-        height: 250px;
+        height: 350px;
     }
 
-    .section-title {
-        font-size: 2rem;
+    .client-image {
+        width: 100px;
+        height: 100px;
     }
-}
 
-@media (max-width: 480px) {
-    .testimonial-card {
-        height: 280px;
+    .testimonial-card h3 {
+        font-size: 1.25rem;
     }
 
     .card-back p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
